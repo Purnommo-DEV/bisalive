@@ -2,14 +2,19 @@
 
 namespace App\Http\Controllers\Front;
 
-use App\Http\Controllers\Controller;
 use App\Models\User;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
 
 class BerandaController extends Controller
 {
     public function beranda(){
-        $influencer = User::with('relasi_medsos')->where('tipe_akun', '=', 'influencer')->get();
+        if(Auth::check()){
+            $influencer = User::with('relasi_medsos')->where('tipe_akun', '=', 'influencer')->get();
+        }else{
+            $influencer = User::with('relasi_medsos')->where('tipe_akun', '=', 'influencer')->get()->take(4);
+        }
         return view('Front.beranda', compact('influencer'));
     }
 }

@@ -15,7 +15,7 @@ class isInfluencer
      */
     public function handle(Request $request, Closure $next): Response
     {
-        if ($request->user()->role == '2') return $next($request);
+        if ($request->user()->role == '3') return $next($request);
         return redirect()->back();
     }
 }

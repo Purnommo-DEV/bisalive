@@ -2,6 +2,9 @@
     <meta charset="utf-8">
     <title>{{ $title }}</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta charset="utf-8">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta content="" name="keywords">
     <meta content="" name="description">
 
@@ -21,7 +24,9 @@
 
     <!-- Customized Bootstrap Stylesheet -->
     <link href="{{ asset('Front/css/bootstrap.min.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="{{ asset('All/assets/css/sweetalert2.min.css') }}">
 
     <!-- Template Stylesheet -->
     <link href="{{ asset('Front/css/style.css') }}" rel="stylesheet">
+    <link href="{{ asset('Front/css/animate.css') }}" rel="stylesheet">
 </head>

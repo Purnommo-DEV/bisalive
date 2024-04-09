@@ -4,6 +4,7 @@ use App\Http\Controllers\Auth\AuthController;
 use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\Back\PendaftarController;
 use App\Http\Controllers\Front\BerandaController;
+use App\Http\Controllers\Front\ProfilPendaftarController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -34,6 +35,13 @@ Route::middleware(['guest'])->group(function () {
 
 Route::middleware(['auth'])->group(function () {
     Route::get('/proses-logout', [AuthController::class, 'proses_logout'])->name('ProsesLogout');
+    Route::prefix('influencer')->middleware(['isInfluencer'])->group(function () {
+        Route::controller(ProfilPendaftarController::class)->group(function () {
+            Route::get('profil', 'profil')->name('influencer.HalamanProfil');
+            Route::post('proses-edit-profil', 'proses_edit_profil')->name('ProsesEditProfil');
+            Route::get('proses-hapus-medsos/{id}', 'proses_hapus_medsos');
+        });
+    });
     Route::prefix('admin')->middleware(['isAdmin'])->group(function () {
         Route::controller(PendaftarController::class)->group(function () {
             Route::get('pendaftar', 'pendaftar')->name('admin.HalamanPendaftar');

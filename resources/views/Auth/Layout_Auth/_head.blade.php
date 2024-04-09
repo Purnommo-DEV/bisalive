@@ -17,7 +17,7 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">
     <!-- CSS Files -->
     <link id="pagestyle" href="{{ asset('Back/assets/css/material-dashboard.css') }}" rel="stylesheet" />
-    <link rel="stylesheet" href="{{ asset('Back/vendors/sweetalert/sweetalert2.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('All/assets/css/sweetalert2.min.css') }}">
     <link rel="stylesheet" href="{{ asset('Back/vendors/datatables/css/jquery.dataTables.min.css') }}">
     <link rel="stylesheet" href="{{ asset('Back/vendors/datatables/css/dataTables.bootstrap4.min.css') }}">
 </head>

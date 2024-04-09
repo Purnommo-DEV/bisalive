@@ -39,18 +39,14 @@ class AuthController extends Controller
                         'route' => route('admin.HalamanPendaftar')
                     ]);
                 }
-            }
-            else if (Auth::attempt($request->only('email', 'password'))) {
-                if (auth()->user()->role == '2') {
+                elseif (auth()->user()->role == '2') {
                     return response()->json([
                         'status_berhasil_login' => 1,
                         'msg' => 'Berhasil Login !',
                         'route' => route('Beranda')
                     ]);
                 }
-            }
-            else if (Auth::attempt($request->only('email', 'password'))) {
-                if (auth()->user()->role == '3') {
+                elseif (auth()->user()->role == '3') {
                     return response()->json([
                         'status_berhasil_login' => 1,
                         'msg' => 'Berhasil Login !',
