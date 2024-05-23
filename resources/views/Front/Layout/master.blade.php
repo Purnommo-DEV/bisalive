@@ -4,7 +4,7 @@
         @include('Front.Layout.head')
 
     <body style="background:linear-gradient(#fff, rgba(52, 182, 183, 0.18)), url({{ asset('All/assets/img/bg_bisalive.jpg') }}); background-size: cover; background-attachment: fixed;">
-        {{-- @include('Front.Layout.spinner') --}}
+        @include('Front.Layout.spinner')
         @include('Front.Layout.topbar')
         @include('Front.Layout.navbar')
 

@@ -96,7 +96,11 @@
                                 <div class="guide-title text-center rounded-bottom p-4">
                                     <div class="guide-title-inner">
                                         <h4 class="mt-3">{{ $data->nama }}</h4>
-                                        <p class="mb-0">{{ $data->lokasi_live }}</p>
+                                        <p class="mb-0">
+                                            <a href="https://wa.me/{{ $data->no_hp }}?text=I'm%20inquiring%20about%20the%20apartment%20listing">Send Message</a>
+                                            {{-- <a href="https://api.whatsapp.com/send?text=Assalamu'alaikum, Admin Ma'had Ashif&phone={{ $data->no_hp }}">Send Message</a> --}}
+                                            {{-- <a href="https://wa.me/{{ $data->no_hp }}?text=Halooo%20{{ $data->nama }}">Send Message</a> --}}
+                                        </p>
                                     </div>
                                 </div>
                             </div>
